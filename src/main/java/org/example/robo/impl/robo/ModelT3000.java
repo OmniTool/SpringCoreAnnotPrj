@@ -4,12 +4,13 @@ import org.example.robo.interfaces.Hand;
 import org.example.robo.interfaces.Leg;
 import org.example.robo.interfaces.Robot;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-@Component("t3000")
+@Component
 @Scope("prototype")
 @PropertySource("classpath:roboSerial.properties")
 public class ModelT3000 implements Robot {
@@ -28,7 +29,8 @@ public class ModelT3000 implements Robot {
     }
 
     @Autowired
-    public ModelT3000(Hand hand, Leg leg, @Value("red") String color) {
+    public ModelT3000(@Qualifier("sonyHand_v1") Hand hand, @Qualifier("sonyLeg_v1") Leg leg,
+                      @Value("red") String color) {
         this.hand = hand;
         this.leg = leg;
         this.color = color;

@@ -4,6 +4,7 @@ import org.example.robo.interfaces.Hand;
 import org.example.robo.interfaces.Leg;
 import org.example.robo.interfaces.Robot;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -17,7 +18,7 @@ public class ModelT2000 implements Robot {
     }
 
     @Autowired
-    public ModelT2000(Hand hand, Leg leg) {
+    public ModelT2000(@Qualifier("toshibaHand") Hand hand, @Qualifier("toshibaLeg") Leg leg) {
         this.hand = hand;
         this.leg = leg;
     }

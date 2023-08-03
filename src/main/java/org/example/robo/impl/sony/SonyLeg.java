@@ -4,7 +4,7 @@ import org.example.robo.interfaces.Leg;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-@Component
+@Component("sonyLeg_v1")
 @Scope("prototype")
 public class SonyLeg implements Leg {
     @Override

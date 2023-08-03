@@ -1,7 +1,9 @@
 package org.example.robo.impl.toshiba;
 
 import org.example.robo.interfaces.Leg;
+import org.springframework.stereotype.Component;
 
+@Component
 public class ToshibaLeg implements Leg {
     @Override
     public void go() {
